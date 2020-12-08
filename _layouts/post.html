@@ -1,0 +1,43 @@
+---
+layout: page
+---
+
+<article class="post">
+  <h1 class="post-title">{{ page.title }}</h1>
+  <!-- <time datetime="{{ page.date | date_to_xmlschema }}" class="post-date">{{ page.date | date_to_string }}</time> -->
+  {{ content }}
+</article>
+
+<div class="pagination">
+  {% if page.previous.url %}
+      <a class="pagination-item older" href="{{page.previous.url}}">{{page.previous.month}}: {{page.previous.title}}</a>
+  {% endif %}
+  {% if page.next.url %}
+    <a class="pagination-item newer" href="{{page.next.url}}">{{page.next.month}}: {{page.next.title}}</a>
+  {% endif %}
+</div>
+
+<!-- <div class="PageNavigation">
+    {% if page.previous.url %}
+        <a class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
+    {% endif %}
+    {% if page.next.url %}
+        <a class="next" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
+    {% endif %}
+</div> -->
+
+<!-- {% if site.related_posts != empty %}
+<aside class="related">
+  <h3>Related posts</h3>
+  <ul class="related-posts">
+    {% for post in site.related_posts limit:3 %}
+      <li>
+        <a href="{{ site.baseurl }}{{ post.url }}">
+          {{ post.title }}
+          <small><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time></small>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</aside>
+{% endif %} -->
